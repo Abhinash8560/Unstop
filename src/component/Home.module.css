@@ -1,0 +1,971 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.main {
+  padding: 10px;
+  width: 100%;
+  height: 138vh;
+  display: flex;
+  overflow-x: hidden;
+}
+/* sidenav  css start */
+
+.left {
+  width: 12%;
+  height: 100%;
+  display: block;
+}
+#sidebarparent {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  align-items: center;
+  padding: 3vh;
+  gap: 0vh;
+  height: 11%;
+}
+#sidebarparentMain{
+  background-color: #7ab3e9;
+  /* padding: 4vh 7vh; */
+  width: 8vw;
+  gap: 0vh;
+  height: 11%;
+  text-align: center;
+  padding: 2vh;
+  margin: 1vw;
+  border-radius: 1.1vh;
+  border: 1.3px solid rgb(3, 70, 96);
+}
+
+#sidebarparent1 {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  align-items: center;
+  background-color: #0073e6;
+  padding: 3vh;
+  gap: 0vh;
+  height: 15%;
+}
+#sidebarparent2 {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  align-items: center;
+  padding: 3vh;
+  gap: 0vh;
+  height: 15%;
+}
+.dashboardfirst {
+  font-family: Inter;
+  font-size: clamp(18px, 1vw, 14px);
+  font-weight: 500;
+  line-height: 17px;
+  letter-spacing: 0px;
+  text-align: center;
+  color: #1c4980;
+  padding: 2vh 0;
+}
+.dashboardfirstinnerclass{
+  font-family: Inter;
+  font-size: clamp(30px, 2vw, 14px);
+  font-weight: 500;
+  line-height: 0px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #605151;
+}
+.dashboardfirst1 {
+  font-family: Inter;
+  font-size: clamp(27px, 2vw, 14px);
+  font-weight: 500;
+  line-height: 0px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #000;
+}
+.dashboardfirst1MainTask{
+  font-family: Inter;
+  font-size: clamp(27px, 2vw, 14px);
+  font-weight: 500;
+  line-height: 0px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: rgb(5, 108, 149);;
+  cursor: pointer;
+}
+.labelAdmin{
+  font-family: Inter;
+font-size: clamp(18px,1vw,15px);
+font-weight: 500;
+line-height: 12px;
+letter-spacing: 0em;
+text-align: center;
+color:#D63500;
+border:1px solid  #D63500;
+border-radius: 1.2vh;
+width: 9vh;
+padding: 0.6vh;
+cursor: pointer;
+}
+/* sidenav  css ends */
+
+/* Assisment Overview  css start */
+
+.right {
+  width: 90%;
+  height: 100%;
+  /* background-color: blueviolet; */
+  padding: 0 2vw;
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: auto;
+  /* background-color: #fff; */
+  padding: 1.3vh;
+  border-top-left-radius: 1.2vh;
+  border-top-right-radius: 1.2vh;
+  border-bottom: 1px solid #bbb;
+  height: auto;
+}
+.mobileIcon {
+  font-size: 4vh;
+  display: block;
+}
+.myAsses {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6vh;
+}
+.partinner1 {
+  font-family: Inter;
+  font-size: clamp(29px, 2vw, 20px);
+  font-weight: 900;
+  line-height: 28px;
+  letter-spacing: 0px;
+  text-align: left;
+  cursor: pointer;
+}
+.partinner2 {
+  font-family: Inter;
+  font-size: clamp(21px, 1vw, 20px);
+  font-weight: 600;
+  line-height: 2vh;
+  letter-spacing: 0em;
+  text-align: left;
+  cursor: pointer;
+}
+.Assessments {
+  /* background-color: red; */
+  width: 100%;
+  padding: 6vh 2.9vh 2vh 3vh;
+  height: 28%;
+  border-radius: 1.1vh;
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+}
+.Overviewflex {
+  font-family: Inter;
+  font-size: clamp(25px, 2vw, 25px);
+  font-weight: 700;
+  line-height: 3vh;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #000;
+}
+.inneroverview {
+  width: 98.8%;
+  /* background-color: #6008a4; */
+  height: 64%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f1f1f1;
+  border-radius: 1.2vh;
+  min-width: 1229px;
+
+}
+.inneroverview > div {
+  color: white;
+  width: 100%;
+  margin: 0px;
+  text-align: center;
+  line-height: 6vh;
+  font-size: clamp(18px, 1vw, 24px);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 1px solid #bbb;
+}
+.innerflexflow1 {
+  display: flex;
+  flex-direction: column;
+}
+.preInner {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 1vw;
+  padding: 1.4vh 1vw;
+  align-items: center;
+}
+.totalflexWrapper{
+  width: 3vw;
+  top: 2.5px;
+  left: 1.666656494140625px;
+  color: #6548ee;
+  font-size: clamp(34px, 2vw, 20px);
+  background-color: #8dd4e6;
+  border-radius: 0.7vh;
+  height: 6vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.totalflexWrapperMid{
+  /* width: 16vw;
+  top: 2.5px;
+  left: 1.666656494140625px;
+  color: #6548ee;
+  font-size: clamp(4px, 2vw, 20px);
+  background-color: #8dd4e6;
+  border-radius: 0.7vh;
+  height: 4vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+.totalflexWrapper2{
+  width: 3vw;
+  top: 2.5px;
+  left: 1.666656494140625px;
+  color: #6548ee;
+  font-size: clamp(34px, 2vw, 20px);
+  background: rgb(187, 187, 187);
+  border-radius: 0.7vh;
+  height:6vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Total1 {
+  font-size: 24px;
+}
+.Totalwrapper3{
+  color: #c81515;
+  font-size: 24px;
+
+}
+.pre1 {
+  font-family: Inter;
+  font-size: clamp(18px, 1vw, 18px);
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0px;
+  color: #1c4980;
+  text-align: left;
+  padding: 2vh 1vw;
+}
+.Total2 {
+  font-family: Inter;
+  font-size: clamp(18px, 1vw, 24px);
+  font-weight: 900;
+  line-height: 13px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #1c4980;
+}
+.greentext {
+  font-family: Inter;
+  font-size: 2.5vh;
+  font-weight: 900;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #05c165;
+}
+.preInner2 {
+  display: flex;
+}
+.cand1 {
+  font-family: Inter;
+  font-size: 2vh;
+  font-weight: 900;
+  line-height: 14px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #1c4980;
+  min-height: 5vh;
+      line-height: 25px;
+
+
+}
+.mobileIcon2 {
+  display: none;
+}
+
+/* Assisment Overview  css ends */
+
+/*only mobile nav */
+#iconflexitem {
+  width: 100%;
+  /* background-color: red; */
+  padding: 2.3vh;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  display: none;
+}
+.assesmentproitem {
+  width: 50%;
+}
+.mobileAssesmentitem {
+  font-family: Inter;
+  font-size: clamp(20px, 2vw, 16px);
+  font-weight: 600;
+  line-height: 19px;
+  letter-spacing: 0em;
+}
+.iconproitem {
+  width: 95px;
+  display: flex;
+  justify-content: space-evenly;
+  font-family: Inter;
+  font-size: clamp(20px, 2vw, 16px);
+  font-weight: 600;
+  line-height: 19px;
+  letter-spacing: 0em;
+}
+
+/*only mobile nav ends */
+
+/* My Assessment css start */
+.cardSection {
+  padding: 3vh;
+  width: 100%;
+  height: auto;
+  /* background-color: #05c165; */
+}
+.myInnerAssessment {
+  font-family: Inter;
+  font-size: clamp(20px, 1vw, 20px);
+  font-weight: 900;
+  line-height: 56px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+.innerCardMain {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 2vh;
+  height: 35.5vh;
+}
+.cardflex {
+  width: 32%;
+  height: 95%;
+  background-color: #b4ccd7;
+  padding: 3vh;
+  border-radius: 1.2vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-style: dotted;
+  border-color: #bbb;
+}
+
+#circleAdd {
+  border-radius: 100%;
+  background-color: #fff;
+  padding: 1vh;
+  width: 69px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 6vh;
+}
+.Add {
+  text-align: center;
+  font-size: 7.1vh;
+  font-weight: 600;
+  padding: 0 29%;
+  color: #0073e6;
+  cursor: pointer;
+}
+.new1 {
+  font-family: Inter;
+  font-size: clamp(25px, 1vw, 20px);
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: 0em;
+  text-align: center;
+  padding: 3.1vh 0 6px 0;
+}
+.new2 {
+  font-family: Inter;
+  font-size: clamp(15px, 1.3vw, 15px);
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+#grapGrid {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.6vw;
+  width: 21vw;
+}
+.cardflex1 {
+  width: 32%;
+  height: 95%;
+  background-color: #fff;
+  padding: 1vh;
+  border-radius: 1.2vh;
+  border: 1px solid #bbb;
+
+}
+.cardflex1dynamic{
+  width: 32%;
+  height: 100%;
+  padding: 1vh;
+  border-radius: 1.2vh;
+    background-color: #fff;
+    border: 1px solid #bbb;
+
+}
+.cardflexDynamic{
+  width: 100%;
+  height: 100%;
+  padding: 1vh;
+  border-radius: 1.2vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2.5vh;
+}
+.A {
+  height: 70%;
+  width: 100%;
+  display: flex;
+  padding: 0.5vh;
+}
+.left1 {
+  height: 100%;
+  width: 90%;
+  display: grid;
+  justify-content: start;
+}
+.right1 {
+  height: 100%;
+  width: 10%;
+  /* background-color: green; */
+}
+.B {
+  height: 30%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.parentContainer {
+  background-color: #cd1e8d;
+  width: 80%;
+  height: 60%;
+}
+.iconItem {
+  width: 40%;
+  height: 36%;
+  background-color: yellowgreen;
+}
+.MathItemContain {
+  width: 100%;
+  height: 40%;
+  background-color: #6548ee;
+  padding: 6vh;
+}
+.threeDotIcon {
+  width: 20%;
+  height: 30%;
+  background-color: #000;
+}
+
+.footerQuestionLink {
+  background-color: #05c165;
+  width: 100%;
+  height: 45%;
+}
+#firstPart {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 27%;
+  padding: 1vh;
+}
+.bagInner {
+  font-size: clamp(22px, 2vw, 15px);
+  font-weight: 600;
+  padding: 0 1%;
+  color: #295f95;
+  cursor: pointer;
+}
+.threeDots1 {
+  font-size: 3.5vh;
+  font-weight: 600;
+  padding: 0 1%;
+  color: #295f95;
+  cursor: pointer;
+}
+.firstpartgrid {
+  padding: 3vh 0vh;
+}
+.firstpart2 {
+  width: 45px;
+  height: 7vh;
+  padding: 1.4vh;
+  display: flex;
+  border-radius: 1.2vh;
+  align-items: center;
+  background-color: #bbb;
+  justify-content: center;
+}
+
+.newMath {
+  font-family: Inter;
+  font-size: clamp(20px, 1.2vw, 18px);
+  font-weight: 500;
+  line-height: 19px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+.jobGrid {
+  padding: 3vh 16vw 1vw 0.5vw;
+  height: max-content;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 0.7vw;
+}
+.myInnerAssessmentMobile {
+  display: none;
+  font-family: Inter;
+  font-size: clamp(20px, 1vw, 20px);
+  font-weight: 900;
+  line-height: 56px;
+  letter-spacing: 0px;
+  text-align: center;
+}
+.typoDate {
+  font-family: Inter;
+  font-size: clamp(20px, 1vw, 15px);
+  font-weight: 500;
+  line-height: 15px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.typoDatee {
+  font-family: Inter;
+  font-size: clamp(18px, 1vw, 15px);
+  font-weight: 500;
+  line-height: 15px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.typoDate1 {
+  font-family: Inter;
+  font-size: clamp(2px, 1vw, 14px);
+  font-weight: 900;
+  line-height: 15px;
+  letter-spacing: 0em;
+  text-align: right;
+  color: #bbb;
+  /* width: 5vw; */
+  min-width: 73px;
+}
+.footerGrid {
+  width: 100%;
+  height: 40%;
+  /* background-color: #05c165; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.1vw 1vw;
+}
+.durationFlexGrid {
+  display: flex;
+  gap: 1vh;
+}
+.durationFlexGridPArent{
+  display: flex;
+  gap: 1vh;
+}
+.durationflex {
+  font-family: Inter;
+  font-size: clamp(16.1px, 1vw, 9px);
+  font-weight: 500;
+  letter-spacing: 0px;
+  text-align: left;
+  /* width: 70%; */
+}
+.durationFlexGrid1 {
+  display: flex;
+  /* gap: 0.1vh; */
+  width: 41%;
+  align-items: center;
+  justify-content: center;
+}
+.durationFlexGrid1A {
+  display: flex;
+  /* gap: 0.1vh; */
+  /* width: 51%; */
+  align-items: center;
+  justify-content: space-between;
+}
+.durationFlexG {
+  display: flex;
+  gap: 4vh;
+  width: 27%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.durationFlex1 {
+  font-family: Inter;
+  font-size: clamp(17px, 1vw, 9px);
+  font-weight: 500;
+  line-height: 17px;
+  letter-spacing: 0px;
+  width: 63%;
+  display: flex;
+  gap: 2vh;
+}
+.linkbtnhexa {
+  width: 6vw;
+  height: 4.3vh;
+  font-size: clamp(14px, 2vw, 10px);
+  border-radius: 4.2vh;
+  outline: none;
+  border: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border: 1px solid #000;
+}
+.sharepoint {
+  display: flex;
+  /* background-color: yellow; */
+  padding: 5px;
+  justify-content: space-evenly;
+  /* gap: 10px; */
+}
+.lpGrid {
+  /* text-align: center; */
+  color: #ffffff;
+  padding: 0.7vh;
+  background-color: #6548ee;
+  border-radius: 100%;
+  min-height: 30px;
+  min-width: 30px;
+  position: relative;
+}
+.lpGrid2 {
+  /* text-align: center; */
+  color: #ffffff;
+  padding: 0.6vh;
+  background-color: #2fb490;
+  border-radius: 100%;
+  min-height: 30px;
+  min-width: 30px;
+  margin-right: 20px;
+  position: relative;
+  /* left: 50px; */
+  right: 15px;
+}
+.lpGrid3 {
+  text-align: center;
+  color: #ffffff;
+  padding: 0.6vh;
+  background-color: #cd1e8d;
+  border-radius: 100%;
+  min-height: 30px;
+  min-width: 30px;
+  position: relative;
+  right: 50px;
+}
+
+/* modal css */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  transition: opacity 0.5s ease;
+}
+
+.open {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+}
+
+/* modal css ends  */
+
+
+.menuIconMobile {
+  display: none;
+}
+@media(max-width:1441px){
+  .dashboardfirst{
+    font-size: clamp(14px, 1vw, 14px);
+  }
+  .inneroverview{
+  min-width: 1153px;
+  }
+}
+@media(max-width:1040px){
+  .inneroverview{
+    min-width: 818px;
+
+
+  }
+  #sidebarparentMain{
+    width: 10.5vw;
+    min-width: 102px;
+    height: 15vh;
+
+  }
+  .cand1{
+    line-height: 15px;
+
+  }
+  .dashboardfirst{
+    font-size: clamp(15px, 1vw, 14px);
+
+  }
+  .preInner{
+  display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+    /* gap: 0.4vw; */
+    padding: 1.4vh 1vw;
+    align-items: center;
+    max-width: 350px;
+}
+.B{
+  justify-content: space-between;
+
+}
+}
+
+
+
+
+
+@media (max-width: 769px) {
+  .Assessments {
+    display: none;
+  }
+  .left {
+    display: none;
+  }
+  .right {
+    width: 100%;
+  }
+  .partinner2 {
+    display: none;
+  }
+  .mobileIcon {
+    display: none;
+  }
+  .mobileIcon2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+        font-size: 4vh;
+  }
+  .myInnerAssessmentMobile {
+    display: block;
+    color: #bbb;
+  }
+  .myInnerAssessment {
+    color: dodgerblue;
+    border-bottom: dodgerblue;
+  }
+  .innerCardMain {
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2vh;
+    flex-wrap: nowrap;
+
+  }
+  .cardflex1dynamic{
+    width: 100%;
+
+  }
+  .cardflex {
+    width: 100%;
+  }
+  .cardflex1 {
+    width: 100%;
+  }
+
+  .left1 {
+    display: flex;
+  }
+  .parenthead1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  #grapGrid {
+    width: 100%;
+  }
+  #iconflexitem {
+    display: flex;
+  }
+  .durationFlexGrid{
+    gap: 3vh;
+    padding: 4vh;
+  }
+  .durationFlex{
+    font-family: Inter;
+  font-size: clamp(16.1px, 1vw, 9px);
+  font-weight: 500;
+  letter-spacing: 0px;
+  text-align: left;
+  }
+  .durationFlexGrid1{
+    width: 38%;
+  }
+  .linkbtnhexa{
+    width: 10vw;
+
+  }
+  .durationFlexGrid1A{
+    gap: 1.1vh;
+  }
+  .jobGrid{
+    padding: 3vw 0vw;
+      gap: 2.7vw;
+  }
+  .firstpartgrid{
+    padding: 0.1vh 3vh;
+    height: 16vh;
+  }
+  .cardflex{
+    height: 528vh;
+
+  }
+  .durationFlex1{
+    width: 34%;
+  }
+
+}
+
+@media (max-width: 426px) {
+  .myInnerAssessmentMobile{
+    font-size: clamp(16.4px, 1vw, 20px);
+  }
+  .myInnerAssessment{
+    font-size: clamp(16.4px, 1vw, 20px);
+
+  }
+  .linkbtnhexa{
+    width: 16vw;
+  }
+  .durationFlex1{
+    width: 60%;
+  }
+  .partinner1{
+    font-size: clamp(21px, 2vw, 20px);
+    font-weight: 700;
+    padding: 0 14vw;
+  }
+  .menuIconMobile {
+  
+    display: block;
+    font-size: 2.7rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+  .B{
+    justify-content: space-around;
+  
+  }
+  .durationFlexGrid{
+    margin-left: 11vw;
+    padding: 0 5vw;
+  }
+}
+
+
+@media (max-width: 321px) {
+  .myInnerAssessmentMobile{
+    display: none;
+  }
+  .myInnerAssessment{
+    display: none;
+  }
+  .mobileAssesmentitem{
+    font-size: clamp(16.5px, 1vw, 16px);
+
+  }
+  .linkbtnhexa{
+    width: 21vw;
+                       
+  }
+  
+  .durationFlexGrid1A{
+    margin-left: 0vw;
+    padding: 0 6px 9px -1vw;
+    gap: 0px;
+
+  }
+    .durationFlexGrid{
+      margin-right: -1vw;
+      padding: 0 7px 4px 6vw;
+      gap: 1px;
+      max-width: 42vw;
+  
+    }
+
+  .sharepoint{
+    padding: 7px;
+
+  }
+  .linkbtnhexa{
+    width: 21vw;
+
+  }
+  .newMath{
+        font-size: clamp(17px, 1.2vw, 18px);
+
+  }
+}

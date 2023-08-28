@@ -1,0 +1,202 @@
+.modalContent {
+  background-color: #fefefe;
+  border: 1px solid #888;
+  width: 43%;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  height: 97%;
+  min-width: 400px;
+}
+
+.close {
+  color: #000;
+  font-size: 38px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 100%;
+  width: 7%;
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.close:hover {
+  color: #333;
+}
+.modalMain {
+  width: 100%;
+  height: 9%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2vw;
+  border-bottom: 1px solid #bbb;
+}
+.headModal {
+  font-family: Inter;
+  font-size: clamp(19px, 1vw, 7px);
+  font-weight: 600;
+  line-height: 17px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+.InputBox {
+  height: 80%;
+  width: 100%;
+  padding: 2px 0px 1px 2.2vw;
+  gap: 2rem;
+}
+.inpuytWrapper {
+  font-family: Inter;
+  font-size: clamp(18px, 1vw, 18px);
+  font-weight: 500;
+  line-height: 10px;
+  letter-spacing: 0em;
+  padding: 15px 1em;
+  width: 93%;
+  min-height: 5vh;
+  margin: auto;
+  border-radius: 1.4vh;
+  border: 1px solid #bbb;
+}
+.inpuytWrapper2 {
+  font-family: Inter;
+  font-size: clamp(18px, 1vw, 18px);
+  font-weight: 500;
+  letter-spacing: 0em;
+  padding: 10px 1em;
+  width: 93%;
+  min-height: 5vh;
+  margin: auto;
+  border-radius: 1.4vh;
+  border: 1px solid #bbb;
+}
+.textAreaChip {
+  width: 93%;
+  height: 21%;
+  padding: 1vh;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: auto;
+  gap: 1vh;
+  border-top-left-radius: 1.2vh;
+  border-top-right-radius: 1.2vh;
+  border: 1px solid #bbb;
+}
+
+.closeChip {
+  font-size: 23px;
+}
+.chipInner {
+  display: flex;
+  flex-direction: row;
+  background-color: #a8cdf7;
+  border-radius: 3vh;
+  width: 25%;
+  height: 5.8vh;
+  text-align: right;
+  padding: 0 1.6vh;
+  font-size: 1.8vh;
+  cursor: pointer;
+  justify-content: space-around;
+  width: 23%;
+
+}
+
+.NameAsk {
+  font-family: Inter;
+  font-size: clamp(23px, 1vw, 18px);
+  font-weight: 500;
+  line-height: 19px;
+  letter-spacing: 0em;
+}
+.NameAsk2 {
+  font-family: Inter;
+  font-size: clamp(23px, 1vw, 18px);
+  font-weight: 500;
+  line-height: 19px;
+  letter-spacing: 0em;
+}
+
+.inpuytWrapper1 {
+  font-family: Inter;
+  font-size: clamp(18px, 1vw, 18px);
+  font-weight: 500;
+  line-height: 10px;
+  letter-spacing: 0em;
+  padding: 15px 1em;
+  width: 93%;
+  min-height: 5vh;
+  margin: auto;
+  border-bottom-left-radius: 1.2vh;
+  border-bottom-right-radius: 1.2vh;
+  border: 1px solid #bbb;
+  color: #000;
+}
+
+.btnBottom {
+  width: 100%;
+  height: 12%;
+  padding: 3vh 1vh 1.1vw 2.3vw;
+  display: flex;
+  gap: 20vh;
+  margin: 1.2vh;
+}
+.saveBttn {
+  width: 92%;
+  height: 94%;
+  background: #0073e6;
+  color: #fff;
+  font-family: Inter;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 17px;
+  letter-spacing: 0em;
+  text-align: center;
+  outline: none;
+  border-radius: 0.9vh;
+  border: none;
+}
+@media (max-width: 1493px) {
+  .NameAsk2 {
+    display: none;
+  }
+  .inpuytWrapper2 {
+    display: none;
+  }
+  .InputBox {
+    height: 76%;
+    padding: 20px;
+
+  }
+  .chipInner {
+    width: 47%;
+    padding: 0 0.6vh;
+  }
+  .textAreaChip {
+    height: 31%;
+  }
+  .btnBottom {
+    margin: 4vh 2.3vh;
+  }
+}
+@media (max-width: 426px) {
+  .modalContent {
+    width: 100%;
+  }
+  .inpuytWrapper {
+    width: 100%;
+  }
+  .textAreaChip {
+    width: 100%;
+    height: 31%;
+  }
+  .inpuytWrapper1 {
+    width: 100%;
+  }
+  .modalContent {
+    min-width: 0px;
+  }
+}
+
