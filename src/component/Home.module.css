@@ -409,7 +409,7 @@ cursor: pointer;
 }
 .new1 {
   font-family: Inter;
-  font-size: clamp(25px, 1vw, 20px);
+  font-size: clamp(25px, 1vw, 21px);
   font-weight: 500;
   line-height: 18px;
   letter-spacing: 0em;
