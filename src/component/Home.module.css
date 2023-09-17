@@ -4,11 +4,10 @@
   padding: 0;
 }
 .main {
-  padding: 10px;
   width: 100%;
-  height: 138vh;
+  height: 112vh;
   display: flex;
-  overflow-x: hidden;
+  background-color: lightblue;
 }
 /* sidenav  css start */
 
@@ -16,19 +15,23 @@
   width: 12%;
   height: 100%;
   display: block;
+  background-color: #fff;
 }
 #sidebarparent {
-  width: 100%;
+  width: 83%;
   display: flex;
   justify-content: start;
   flex-direction: column;
   align-items: center;
-  padding: 3vh;
+  padding: 16px 3vh;
+  margin: 0.4vw;
   gap: 0vh;
   height: 11%;
+  border-radius: 2.2vh;
+ cursor: default;
 }
 #sidebarparentMain{
-  background-color: #7ab3e9;
+  background-color: #ccc;
   /* padding: 4vh 7vh; */
   width: 8vw;
   gap: 0vh;
@@ -39,6 +42,8 @@
   border-radius: 1.1vh;
   border: 1.3px solid rgb(3, 70, 96);
 }
+
+
 
 #sidebarparent1 {
   width: 100%;
@@ -120,7 +125,8 @@ cursor: pointer;
 .right {
   width: 90%;
   height: 100%;
-  /* background-color: blueviolet; */
+  background-color: #fff;
+  margin-left: 2vw;
   padding: 0 2vw;
 }
 .header {
@@ -145,6 +151,15 @@ cursor: pointer;
   justify-content: space-between;
   align-items: center;
   gap: 6vh;
+}
+.bottomflex{
+  background-color: rgb(122, 179, 233);
+  width: 7vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1.6vh;
 }
 .partinner1 {
   font-family: Inter;
@@ -186,7 +201,7 @@ cursor: pointer;
 .inneroverview {
   width: 98.8%;
   /* background-color: #6008a4; */
-  height: 64%;
+  height: 85%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -232,19 +247,7 @@ cursor: pointer;
   justify-content: center;
   align-items: center;
 }
-.totalflexWrapperMid{
-  /* width: 16vw;
-  top: 2.5px;
-  left: 1.666656494140625px;
-  color: #6548ee;
-  font-size: clamp(4px, 2vw, 20px);
-  background-color: #8dd4e6;
-  border-radius: 0.7vh;
-  height: 4vh;
-  display: flex;
-  justify-content: center;
-  align-items: center; */
-}
+
 .totalflexWrapper2{
   width: 3vw;
   top: 2.5px;
@@ -277,14 +280,20 @@ cursor: pointer;
   padding: 2vh 1vw;
 }
 .Total2 {
+
   font-family: Inter;
   font-size: clamp(18px, 1vw, 24px);
   font-weight: 900;
-  line-height: 13px;
+  line-height: 11px;
   letter-spacing: 0px;
   text-align: left;
   color: #1c4980;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
+
 .greentext {
   font-family: Inter;
   font-size: 2.5vh;
@@ -367,17 +376,19 @@ cursor: pointer;
   text-align: left;
 }
 .innerCardMain {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  width: 100%;
-  gap: 2vh;
-  height: 35.5vh;
+    display: grid;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
+    gap: 2vh;
+    height: 70vh;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 .cardflex {
-  width: 32%;
-  height: 95%;
+  width: 400px;
+  height: 250px;
   background-color: #b4ccd7;
   padding: 3vh;
   border-radius: 1.2vh;
@@ -432,8 +443,8 @@ cursor: pointer;
   width: 21vw;
 }
 .cardflex1 {
-  width: 32%;
-  height: 95%;
+  width: 400px;
+  height: 250px;
   background-color: #fff;
   padding: 1vh;
   border-radius: 1.2vh;
@@ -441,8 +452,8 @@ cursor: pointer;
 
 }
 .cardflex1dynamic{
-  width: 32%;
-  height: 100%;
+  width: 400px;
+  height: 250px;
   padding: 1vh;
   border-radius: 1.2vh;
     background-color: #fff;
@@ -450,8 +461,8 @@ cursor: pointer;
 
 }
 .cardflexDynamic{
-  width: 100%;
-  height: 100%;
+  width: 400px;
+  height: 250px;
   padding: 1vh;
   border-radius: 1.2vh;
   display: flex;
@@ -591,12 +602,12 @@ cursor: pointer;
 }
 .typoDate1 {
   font-family: Inter;
-  font-size: clamp(2px, 1vw, 14px);
+  font-size: clamp(14px, 1vw, 14px);
   font-weight: 900;
   line-height: 15px;
   letter-spacing: 0em;
   text-align: right;
-  color: #bbb;
+  color: #5f2c2ce7;
   /* width: 5vw; */
   min-width: 73px;
 }
@@ -742,7 +753,7 @@ cursor: pointer;
     font-size: clamp(14px, 1vw, 14px);
   }
   .inneroverview{
-  min-width: 1153px;
+    min-width: 739px;
   }
 }
 @media(max-width:1040px){
@@ -819,16 +830,14 @@ cursor: pointer;
     flex-direction: column;
     justify-content: space-between;
     gap: 2vh;
-    flex-wrap: nowrap;
+    grid-template-columns: 1fr;
 
   }
   .cardflex1dynamic{
     width: 100%;
 
   }
-  .cardflex {
-    width: 100%;
-  }
+
   .cardflex1 {
     width: 100%;
   }
@@ -877,11 +886,15 @@ cursor: pointer;
     height: 16vh;
   }
   .cardflex{
-    height: 528vh;
+      height: 218px;
+      width: 100%;
 
   }
   .durationFlex1{
     width: 34%;
+  }
+  .typoDate1{
+
   }
 
 }
@@ -917,7 +930,7 @@ cursor: pointer;
   }
   .B{
     justify-content: space-around;
-  
+
   }
   .durationFlexGrid{
     margin-left: 11vw;
@@ -929,6 +942,10 @@ cursor: pointer;
 @media (max-width: 321px) {
   .myInnerAssessmentMobile{
     display: none;
+  }
+  .firstpartgrid{
+    overflow-x: scroll;
+
   }
   .myInnerAssessment{
     display: none;

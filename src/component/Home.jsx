@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React,{useState,useEffect} from "react";
 import Styles from "./Home.module.css";
 import { FaMobileAlt } from "react-icons/fa";
 import { PiSquareSplitVerticalLight } from "react-icons/pi";
@@ -20,34 +20,46 @@ import { MdOutlineLibraryAddCheck } from "react-icons/md";
 import { PiLinkSimpleFill } from "react-icons/pi";
 import { IoReorderThree } from 'react-icons/io5';
 import MobileNav from '../pages/MobileNav/MobileNav'
-import { useLocation } from "react-router-dom";
 
 
 const Home = ({assessmentData}) => {
   const [assessments, setAssessments] = useState([]);
-  const [showNewCard, setShowNewCard] = useState(null);
- const location=useLocation();
- const receivedData=location.state
+  const [showNewCard, setShowNewCard] = useState(false);
 
-  console.log(assessments);
+  const [activeIcon, setActiveIcon] = useState(null); 
+
+  const handleIconClick = (iconName) => {
+    setActiveIcon(iconName === activeIcon ? null : iconName);
+  };
+
+
+
+  
+  // console.log(assessments);
    const handleSaveAssessment = (newCardData) => {
-    setAssessments([...assessments, newCardData]);
+    console.log(assessments,"assessments");
+    console.log(newCardData,"newCardData");
+    // setAssessments([...assessments, newCardData]);
     setShowNewCard(true);
   };
 
-  console.log("dataaa",assessments);
+  // console.log("dataaa",assessments);
 
 
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const handleButtonClick = () => {
-    setIsModalOpen(true);
+  const handleButtonClick = (arg) => {
+
+      setShowNewCard(true);
+      setIsModalOpen(true);
+
   };
+
 
   const closeModal = () => {
     setIsModalOpen(false);
   };
   const handleSave = (assessmentData) => {
-    console.log("Assessment data saved:", assessmentData);
+    // console.log("Assessment data saved:", assessmentData);
   };
   const [active, setActive] = useState(false);
 
@@ -57,40 +69,86 @@ const Home = ({assessmentData}) => {
   const handleCloseClick = () => {
     setActive(false);
   };
+
+
+
+
+
+
+
+  
+
+  const getBackgroundColor = (iconName) => {
+    return activeIcon === iconName ? '#7ab3e9' : ''; 
+  };
+
+
+
+
+  const cardArr = localStorage.getItem("assessmentData")
+  const cardArray=JSON.parse(cardArr)
+  console.log(cardArray,"cardArray");
+
+
   return (
     
     <>
       <main className={Styles.main}>
-        <section className={Styles.left}>
-          <div id={Styles.sidebarparent}>
-            <div>
-              <TbArticle className={Styles.dashboardfirst1} />
-            </div>
-            <p className={Styles.dashboardfirst}>Dashboard</p>
-          </div>
+      <section className={Styles.left}>
+      <div
+        id={Styles.sidebarparent}
+        onClick={() => handleIconClick('dashboard')}
+        style={{ backgroundColor: getBackgroundColor('dashboard') }}
+      >
+        <div>
+          <TbArticle className={Styles.dashboardfirst1} />
+        </div>
+        <p className={Styles.dashboardfirst}>Dashboard</p>
+      </div>
 
-          <div id={Styles.sidebarparentMain}>
-            <div>
-              <FiEdit className={Styles.dashboardfirst1MainTask} />
-            </div>
-            <p className={Styles.dashboardfirst}>Assessment</p>
-          </div>
+      <div
+        id={Styles.sidebarparentMain}
+        onClick={() => handleIconClick('assessment')}
+        style={{ backgroundColor: getBackgroundColor('assessment') }}
+      >
+         <div>
+          <FiEdit className={Styles.dashboardfirst1MainTask} />
+        </div>
+        <p className={Styles.dashboardfirst}>Assessment</p>
+      </div>
 
-          <div id={Styles.sidebarparent}>
-            <div>
-              <MdOutlineLibraryAddCheck className={Styles.dashboardfirst1} />
-            </div>
-            <p className={Styles.dashboardfirst}>My Library</p>
-          </div>
+      <div
+        id={Styles.sidebarparent}
+        onClick={() => handleIconClick('myLibrary')}
+        style={{ backgroundColor: getBackgroundColor('myLibrary') }}
+      >
+          <div>
+          <MdOutlineLibraryAddCheck className={Styles.dashboardfirst1} />
+        </div>
+        <p className={Styles.dashboardfirst}>My Library</p>
+      </div>
 
-          <div id={Styles.sidebarparent}>
-          <label className={Styles.labelAdmin}>Admin</label><br />
-            <div>
-              <PiLinkSimpleFill className={Styles.dashboardfirstinnerclass} />
-            </div>
-            <p className={Styles.dashboardfirst}>Round Status</p>
-          </div>
-        </section>
+      <div
+        id={Styles.sidebarparent}
+      
+      >
+        <label className={Styles.labelAdmin}>Admin</label><br />
+        <div className={Styles.bottomFlex}   onClick={() => handleIconClick('roundStatus')}
+        style={{ backgroundColor: getBackgroundColor('roundStatus') }}>
+
+          <PiLinkSimpleFill className={Styles.dashboardfirstinnerclass} />
+        <p className={Styles.dashboardfirst}>Round Status</p>
+        </div>
+
+      </div>
+    </section>
+
+
+
+
+
+
+
 
         {/* Nav Overview start  */}
 
@@ -124,7 +182,6 @@ const Home = ({assessmentData}) => {
             <p className={Styles.Overviewflex}>Assessments Overview</p>
             <div className={Styles.inneroverview}>
               <div
-                style={{ flex: "0 0 12vw" }}
                 className={Styles.innerflexflow1}
               >
                 <p className={Styles.pre1}>Total Assessment</p>
@@ -247,7 +304,7 @@ const Home = ({assessmentData}) => {
             <div className={Styles.innerCardMain}>
               <div className={Styles.cardflex}>
                 <div id={Styles.circleAdd}>
-                  <span className={Styles.Add} onClick={handleButtonClick}>+</span>
+                  <span className={Styles.Add} onClick={() =>handleButtonClick()}>+</span>
                   <div className={`${Styles.modal} ${isModalOpen ? Styles.open : ''}`} >
                 <ModalContent closeModal={closeModal} onSave={handleSaveAssessment} />
 
@@ -304,6 +361,7 @@ const Home = ({assessmentData}) => {
                   </div>
                 </div>
               </div>
+
               <div className={Styles.cardflex1}>
                 <div className={Styles.A}>
                   <div className={Styles.left1}>
@@ -350,30 +408,31 @@ const Home = ({assessmentData}) => {
                   </div>
                 </div>
               </div>
-              <div className={Styles.cardflexDynamic}>
-              
-              {assessments?.map((assessment, index) => (
-        <div key={index} className={Styles.cardflex1dynamic}>
-          <div className={`${Styles.A} ${showNewCard ? Styles.visibleCard : ''}`}>
-            <div className={Styles.left1}>
-              <div className={Styles.firstpart2}>
-                <RiHandbagLine className={Styles.bagInner} />
-              </div>
-              <div className={Styles.firstpartgrid}>
-                <p className={Styles.newMath}>Math Assessment</p>
-                <div className={Styles.jobGrid}>
-                  <p className={Styles.typoDate}>job</p>
-                  <MdCalendarMonth className={Styles.typoDatee} />
-                  <p className={Styles.typoDate1}> 20 Apr 2023</p>
+
+
+              {
+                cardArray && cardArray.map((item)=>(
+                  <div className={Styles.cardflex1}>
+                <div className={Styles.A}>
+                  <div className={Styles.left1}>
+                    <div className={Styles.firstpart2}>
+                      <RiHandbagLine className={Styles.bagInner} />
+                    </div>
+                    <div className={Styles.firstpartgrid}>
+                      <p className={Styles.newMath}>{item.assessmentName}</p>
+                      <div className={Styles.jobGrid}>
+                        <p className={Styles.typoDate}>{item.description}</p>
+                        <MdCalendarMonth className={Styles.typoDatee} />
+                        <p className={Styles.typoDate1}>{item.duration}</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className={Styles.right1}>
+                    <BsThreeDotsVertical className={Styles.threeDots1} />
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div className={Styles.right1}>
-              <BsThreeDotsVertical className={Styles.threeDots1} />
-            </div>
-          </div>
-          <div className={Styles.B}>
-                  <div className={Styles.durationFlexGridPArent}>
+                <div className={Styles.B}>
+                  <div className={Styles.durationFlexGrid}>
                     <div>
                       <p className={Styles.durationflex}>00</p>
                       <p className={Styles.durationflex}>Duration</p>
@@ -383,7 +442,7 @@ const Home = ({assessmentData}) => {
                       <p className={Styles.durationflex}>Questions</p>
                     </div>
                   </div>
-                  <div className={Styles.durationFlexGrid1}>
+                  <div className={Styles.durationFlexGrid1A}>
                     <div className={Styles.durationFlex1}>
                       <button className={Styles.linkbtnhexa}>
                         <AiOutlineLink />
@@ -391,13 +450,18 @@ const Home = ({assessmentData}) => {
                       </button>
                     </div>
                     <div className={Styles.sharepoint}>
-                      <p className={Styles.lpGrid}>LP</p>
+                      <p className={Styles.lpGrid}>L</p>
+                      <p className={Styles.lpGrid2}>L</p>
+                      <p className={Styles.lpGrid3}>LP</p>
                     </div>
+                   
                   </div>
                 </div>
-        </div>
-      ))}
-      </div>
+              </div> 
+                 
+                ))
+              }
+
             </div>
           </article>
         </section>

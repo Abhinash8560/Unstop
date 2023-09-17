@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import Styles from "./ModalContent.module.css";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -12,10 +12,17 @@ const ModalContent = ({ closeModal, onSave,onAssessmentDataChange }) => {
     skills: [],
     duration: "",
   });
-  console.log("data",assessmentData)
+  // console.log("dataaa",assessmentData)
+
+  // useEffect(() => {
+  //   localStorage.setItem("cardData", JSON.stringify(assessmentData));
+  // }, [assessmentData]);
+
    const nav=useNavigate();
   const handleInputChange = (event) => {
     const { name, value } = event.target;
+    // console.log("Input changed:", name, value);
+
     setAssessmentData((prevData) => ({
       ...prevData,
       [name]: value,
@@ -46,13 +53,44 @@ const ModalContent = ({ closeModal, onSave,onAssessmentDataChange }) => {
     }));
   };
   const [newSkill, setNewSkill] = useState("");
-  const handleSave = (assessmentData) => {
-    onSave(assessmentData);
-    toast.success("Saved");
-    closeModal();
-    nav("/", { state: assessmentData });
 
+
+
+//   const handleSave = (assessmentData) => {
+//     console.log(assessmentData,"assessmentData");
+//     // localStorage.setItem((prevData)=>({...prevData},assessmentData))
+// //     const existingData = JSON.parse(localStorage.getItem('assessmentData')) || {};
+
+// // const newData = {
+// //   ...existingData,
+// //   ...assessmentData,
+// // };
+
+// // localStorage.setItem('assessmentData', JSON.stringify(newData));
+
+// // console.log();
+
+
+    
+//     // onSave(assessmentData);
+//     // toast.success("Saved");
+//     // closeModal();
+//     // nav("/", { state: assessmentData });
+
+//   }
+
+  const handleSave = (assessmentData) => {
+        const existingData = JSON.parse(localStorage.getItem('assessmentData')) || [];
+  
+    existingData.push(assessmentData);
+  
+    localStorage.setItem('assessmentData', JSON.stringify(existingData));
+    
+    console.log(existingData, "Updated assessmentData");
+
+    closeModal();
   }
+  
   return (
     <>
       <section className={Styles.modalContent}>
@@ -86,7 +124,7 @@ const ModalContent = ({ closeModal, onSave,onAssessmentDataChange }) => {
             <option value="">Select Purpose</option>
             <option>job</option>
             <option>Learning</option>
-            <option>Upgrading Skills</option>
+            <option>upSkills</option>
           </select>
           <br />
           <label className={Styles.NameAsk}>Description</label>
@@ -142,7 +180,7 @@ const ModalContent = ({ closeModal, onSave,onAssessmentDataChange }) => {
           />
         </div>
         <div className={Styles.btnBottom}>
-          <button onClick={handleSave} className={Styles.saveBttn}>
+          <button onClick={() => handleSave(assessmentData)} className={Styles.saveBttn}>
             Save
           </button>
         </div>
